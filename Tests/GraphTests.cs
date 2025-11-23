@@ -1,6 +1,7 @@
 using Algorithms;
 using Xunit;
 using System.Collections.Generic;
+using FluentAssertions;
 
 public class GraphTests
 {
@@ -14,8 +15,8 @@ public class GraphTests
             new List<int>{1,2}  // 3
         };
         var order = Graphs.BFS(adj, 0);
-        Assert.Contains(0, order);
-        Assert.Contains(3, order);
+        order.Should().Contain(new[] { 0 });
+        order.Should().Contain(new[] { 3 });
     }
 
     [Fact]
@@ -28,7 +29,7 @@ public class GraphTests
             new List<int>{1,2}
         };
         var order = Graphs.DFS(adj, 0);
-        Assert.Contains(0, order);
-        Assert.Contains(3, order);
+        order.Should().Contain(new[] { 0 });
+        order.Should().Contain(new[] { 3 });
     }
 }
