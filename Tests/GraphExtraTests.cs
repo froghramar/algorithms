@@ -25,7 +25,7 @@ public class GraphExtraTests
         var adj = new List<(int to, int w)>[] {
             new List<(int,int)>{ (1, 5), (2, 2) }, // 0
             new List<(int,int)>{ (2, 1) },         // 1
-            new List<(int,int)>{ (1, 3) }          // 2
+            new List<(int,int)>{ (1, 2) }          // 2
         };
         var dist = GraphExtras.Dijkstra(3, adj, 0);
         dist[0].Should().Be(0);
